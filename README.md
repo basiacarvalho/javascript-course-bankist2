@@ -36,7 +36,7 @@ A marketing website for a fictional bank called „Bankist” with a number of c
 
 #### Tablet and Desktop view :
 
-![Screenshot](../bankist_2_linkedin.pngg)
+![Screenshot](../bankist_2_linkedin.png)
 
 ### Project Status
 
