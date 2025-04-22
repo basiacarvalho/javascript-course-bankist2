@@ -29,8 +29,8 @@ A marketing website for a fictional bank called „Bankist” with a number of c
 
 ### Links
 
-- Source code repository URL: [Github](https://github.com/basiacarvalho/javascript-dice-game)
-- Live Site URL: [Live demo](https://basiacarvalho.github.io/javascript-dice-game/)
+- Source code repository URL: [Github](https://github.com/basiacarvalho/javascript-course-bankist2)
+- Live Site URL: [Live demo](https://basiacarvalho.github.io/javascript-course-bankist2/)
 
 ### Visuals
 
