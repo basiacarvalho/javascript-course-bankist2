@@ -45,5 +45,5 @@ A marketing website for a fictional bank called „Bankist” with a number of c
 
 ### Author
 
-<p align="justify">👩‍💻 The "Bankist 2" is the result of taking part in a course on Udemy: 'The Complete JavaScript Course 2025: From Zero to Expert!' by Jonas Schmedtmann. The entire code comes from the course content.
+<p align="justify">👩‍💻 The "Bankist 2" is the result of taking part in a course on Udemy: 'The Complete JavaScript Course 2025: From Zero to Expert!' by Jonas Schmedtmann. The code comes from the course content (The "README.md" file was created by me).
 </p>
