@@ -4,7 +4,7 @@
 
 ## Table of contents
 
-- [Project Title](#dice-game)
+- [Project Title](#"bankist2"-a-marketing-website)
 - [Overview](#overview)
 - [The Project](#the-project)
 - [Technology stack](#technology-stack)
