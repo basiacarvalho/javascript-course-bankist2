@@ -11,7 +11,6 @@ const tabs = document.querySelectorAll('.operations__tab');
 const tabsContainer = document.querySelector('.operations__tab-container');
 const tabsContent = document.querySelectorAll('.operations__content');
 
-// Modal window
 const openModal = function (e) {
   e.preventDefault();
   modal.classList.remove('hidden');
@@ -33,38 +32,32 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
-//Implementing Smooth Scrolling:
 btnScrollTo.addEventListener('click', function (e) {
   section1.scrollIntoView({ behavior: 'smooth' });
 });
 
-//Page navigation
 document.querySelector('.nav__links').addEventListener('click', function (e) {
   e.preventDefault();
 
-  //Matching strategy:
   if (e.target.classList.contains('nav__link')) {
     const id = e.target.getAttribute('href');
     document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
   }
 });
 
-// Tabbed Component
 tabsContainer.addEventListener('click', function (e) {
   const clicked = e.target.closest('.operations__tab');
   if (!clicked) return;
   tabs.forEach(tab => tab.classList.remove('operations__tab--active'));
   clicked.classList.add('operations__tab--active');
   tabsContent.forEach(content =>
-    content.classList.remove('operations__content--active')
+    content.classList.remove('operations__content--active'),
   );
-
   document
     .querySelector(`.operations__content--${clicked.dataset.tab}`)
     .classList.add('operations__content--active');
 });
 
-// Menu fade animation
 const handleHover = function (e) {
   if (e.target.classList.contains('nav__link')) {
     const link = e.target;
@@ -80,15 +73,6 @@ const handleHover = function (e) {
 
 nav.addEventListener('mouseover', handleHover.bind(0.5));
 nav.addEventListener('mouseout', handleHover.bind(1));
-const initialCoords = section1.getBoundingClientRect();
-
-window.addEventListener('scroll', function () {
-  if (this.window.scrollY > initialCoords.top) {
-    nav.classList.add('sticky');
-  } else {
-    nav.classList.remove('sticky');
-  }
-});
 
 const header = document.querySelector('.header');
 const navHeight = nav.getBoundingClientRect().height;
@@ -110,7 +94,6 @@ const headerObserver = new IntersectionObserver(stickyNav, {
 });
 headerObserver.observe(header);
 
-// Reveal sections:
 const allSections = document.querySelectorAll('.section');
 
 const revealSection = function (entries, observer) {
@@ -129,6 +112,7 @@ const sectionObserver = new IntersectionObserver(revealSection, {
 
 allSections.forEach(function (section) {
   sectionObserver.observe(section);
+  section.classList.add('section--hidden');
 });
 
 const imgTargets = document.querySelectorAll('img[data-src]');
@@ -138,7 +122,6 @@ const loadImg = function (entries, observer) {
 
   if (!entry.isIntersecting) return;
 
-  //Replace 'src' attribute with 'data-src' attribute:
   entry.target.src = entry.target.dataset.src;
 
   entry.target.addEventListener('load', function () {
@@ -156,7 +139,6 @@ const imgObserver = new IntersectionObserver(loadImg, {
 
 imgTargets.forEach(img => imgObserver.observe(img));
 
-///////////////  Slider  ///////////////////
 const slider = function () {
   const slides = document.querySelectorAll('.slide');
   const btnLeft = document.querySelector('.slider__btn--left');
@@ -166,12 +148,11 @@ const slider = function () {
   let currentSlide = 0;
   const maxSlide = slides.length;
 
-  // Functions:
   const createDots = function () {
     slides.forEach(function (_, i) {
       dotContainer.insertAdjacentHTML(
         'beforeend',
-        `<button class="dots__dot" data-slide=${i}></button>`
+        `<button class="dots__dot" data-slide=${i}></button>`,
       );
     });
   };
@@ -181,7 +162,6 @@ const slider = function () {
       .querySelectorAll('.dots__dot')
       .forEach(dot => dot.classList.remove('dots__dot--active'));
 
-    // Adding an active class ONLY to the dot that is active at the moment
     document
       .querySelector(`.dots__dot[data-slide="${slide}"]`)
       .classList.add('dots__dot--active');
@@ -189,7 +169,7 @@ const slider = function () {
 
   const goToSlide = function (slide) {
     slides.forEach(
-      (s, i) => (s.style.transform = `translateX(${100 * (i - slide)}%)`)
+      (s, i) => (s.style.transform = `translateX(${100 * (i - slide)}%)`),
     );
   };
 
@@ -222,7 +202,6 @@ const slider = function () {
 
   int();
 
-  // Event handlers:
   btnRight.addEventListener('click', nextSlide);
   btnLeft.addEventListener('click', prevSlide);
 
